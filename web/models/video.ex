@@ -1,17 +1,18 @@
 defmodule Rumbl.Video do
   use Rumbl.Web, :model
 
-  @required_fields ~w(url title description)a
-  @optional_fields ~w()a
-
   schema "videos" do
     field :url, :string
     field :title, :string
     field :description, :string
     belongs_to :user, Rumbl.User, foreign_key: :user_id
+    belongs_to :category, Rumbl.Category
 
     timestamps()
   end
+
+  @required_fields ~w(url title description)a
+  @optional_fields ~w(category_id)a
 
   @doc """
   Builds a changeset based on the `struct` and `params`.
