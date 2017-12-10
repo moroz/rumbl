@@ -9,6 +9,9 @@ config :rumbl, Rumbl.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+# Make ComeOnIn faster by skipping unnecessary rounds
+config :bcrypt_elixir, log_rounds: 4
+
 # Configure your database
 config :rumbl, Rumbl.Repo,
   adapter: Ecto.Adapters.Postgres,
