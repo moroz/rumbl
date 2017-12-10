@@ -11,9 +11,11 @@ defmodule Rumbl.User do
     timestamps()
   end
 
+  @required_attrs ~w(username password)a
+
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, ~w(name username), [])
+    |> cast(params, ~w(name username)a, [])
     |> validate_length(:username, min: 1, max: 20)
     |> unique_constraint(:username)
   end
@@ -22,6 +24,7 @@ defmodule Rumbl.User do
     model
     |> changeset(params)
     |> cast(params, ~w(password), [])
+    |> validate_required(@required_attrs)
     |> validate_length(:password, min: 6, max: 100)
     |> put_pass_hash()
   end
