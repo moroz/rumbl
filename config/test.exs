@@ -16,7 +16,7 @@ config :bcrypt_elixir, log_rounds: 4
 config :rumbl, Rumbl.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "karol",
-  password: "",
+  password: "7R2h2djZ",
   database: "rumbl_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
