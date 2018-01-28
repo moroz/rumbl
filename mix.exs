@@ -44,7 +44,8 @@ defmodule Rumbl.Mixfile do
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
-      {:dogma, "~> 0.1", only: [:dev]}
+      {:dogma, "~> 0.1", only: [:dev]},
+      {:sweet_xml, "~> 0.6.5"}
     ]
   end
 
